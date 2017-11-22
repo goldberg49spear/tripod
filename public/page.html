@@ -63,9 +63,10 @@ DemoApp.controller('DemoController', function DemoController($scope) {
                 <div dx-select-box="searchModeOptions"></div>
             </div>
         </div>
-    </div>
-    <div>
-        <button onclick="getRecords()" class="btn btn-primary">Fetch details</button>
+        
+        
+        <div>
+        <button ng-click="getRecords()" class="btn btn-primary">Fetch details</button>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -89,7 +90,12 @@ DemoApp.controller('DemoController', function DemoController($scope) {
             </tbody>
         
         </table>
+        </div>
+        
+        
+        
     </div>
+    
     
 </body>
 </html>
