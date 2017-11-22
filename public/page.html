@@ -28,6 +28,7 @@ DemoApp.controller('DemoController',['$scope' ,'$http', function DemoController(
         $http({method:'GET',url:'/db/getRecords'}).then(function success(response){
              $scope.dataset = response.data; 
                 alert('success');
+                alert(response.data)
         },function fail(response){
             alert('fail:'+response.data);
              $scope.dataset = response.data||'Request failed'; 
