@@ -20,6 +20,7 @@
     var DemoApp = angular.module('DemoApp', ['dx']);
 
 DemoApp.controller('DemoController', function DemoController($scope) {
+    alert('inside controller');
     $scope.searchValue = "";
     $scope.productName = "",
     $scope.productPrice = "",
@@ -41,7 +42,10 @@ DemoApp.controller('DemoController', function DemoController($scope) {
     </script>
 </head>
 <body class="dx-viewport">
+    
+    
     <div class="demo-container" ng-app="DemoApp" ng-controller="DemoController">
+        <p>Hi checking</p>
         <div class="form">
             <div id="simple-treeview" dx-tree-view="treeViewOptions"></div>
             <div id="product-details" ng-if="productPrice">
