@@ -3,37 +3,33 @@ p{
 }
 
 
-#simple-treeview, #product-details {
+#treeview {
+	height: 400px;
+}
+
+.options {
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 260px;
+    top: 0;
+    background-color: #f5f5f5;
+}
+
+.caption {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.option {
+    margin-top: 10px;
+}
+
+.option > .dx-selectbox {
     display: inline-block;
-}
-
-#product-details {
-    vertical-align: top;
-    width: 400px;
-    height: 420px;
-    margin-left: 20px;
-}
-
-#product-details > img {
-    border: none;
-    height: 300px;
-    width: 400px;
-}
-
-#product-details > .name {
-    text-align: center;
-    font-size: 20px;
-}
-
-#product-details > .price {
-    text-align: center;
-    font-size: 24px;
-}
-
-.dark #product-details > div {
-    color: #f0f0f0;
-}
-
-.hidden {
-    visibility: hidden;
+    vertical-align: middle;
+    max-width: 350px;
+    width: 100%;
+    margin-top: 5px;
 }
