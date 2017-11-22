@@ -20,7 +20,7 @@
     
    var DemoApp = angular.module('DemoApp', ['dx']);
 
-DemoApp.controller('DemoController', function DemoController($scope) {
+DemoApp.controller('DemoController',['$scope' ,'$http', function DemoController($scope,$http) {
     $scope.searchMode = "contains";
     
     $scope.getRecords=function(){
@@ -52,7 +52,7 @@ DemoApp.controller('DemoController', function DemoController($scope) {
     };
     
     
-});
+}]);
     
     </script>
 </head>
