@@ -24,7 +24,7 @@ DemoApp.controller('DemoController', function DemoController($scope) {
     
     $scope.getRecords=function(){
         alert('inside function');
-        $http({method:'GET',url:'/goldberg49spear/tripod/index.js/db/getRecords'}).then(function success(response){
+        $http({method:'GET',url:'https://github.com/goldberg49spear/tripod/index.js/db/getRecords'}).then(function success(response){
              $scope.dataset = response.data; 
                 alert('success');
         },function fail(response){
