@@ -25,7 +25,7 @@ DemoApp.controller('DemoController', function DemoController($scope) {
     $scope.getRecords=function(){
         $http({method:'GET',url:'/db/getRecords'}).then(function success(response){
              $scope.dataset = response.data; 
-        
+                alert('success');
         },function fail(response){
              $scope.dataset = response.data||'Request failed'; 
         });
@@ -46,6 +46,8 @@ DemoApp.controller('DemoController', function DemoController($scope) {
         },
     	dataSource: ["contains", "startsWith"]
     };
+    
+    $scope.getRecords();
 });
     
     </script>
