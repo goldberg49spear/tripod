@@ -23,7 +23,7 @@ DemoApp.controller('DemoController', function DemoController($scope) {
     $scope.searchMode = "contains";
     
     $scope.getRecords=function(){
-        $http({method:'GET',url:'/db/getrecords'}).then(function success(response){
+        $http({method:'GET',url:'/db/getRecords'}).then(function success(response){
         
         
         },function fail(response){
