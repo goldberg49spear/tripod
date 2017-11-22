@@ -29,7 +29,7 @@ DemoApp.controller('DemoController',['$scope' ,'$http', function DemoController(
              $scope.dataset = response.data; 
                 alert('success');
         },function fail(response){
-            alert('fail');
+            alert('fail:'+response.data);
              $scope.dataset = response.data||'Request failed'; 
         });
         alert('checking');
