@@ -22,6 +22,15 @@
 DemoApp.controller('DemoController', function DemoController($scope) {
     $scope.searchMode = "contains";
     
+    $scope.getRecords=function(){
+        $http({method:'GET',url:'/db/getrecords'}).then(function success(response){
+        
+        
+        },function fail(response){
+        
+        });
+    };
+    
     $scope.treeViewOptions = {
         bindingOptions: {
             searchMode: "searchMode",
