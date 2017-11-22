@@ -8,8 +8,8 @@ var app = express();
 
 
 
-app.use('/static',express.static(__dirname +'/style.css'));
-app.use('/static',express.static(__dirname +'/page.html'));
+app.use('/static',express.static(__dirname +'/public'));
+
 
 
 //app.use(bodyParser.json());
@@ -23,7 +23,7 @@ app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function(request, response) {
     //var result = 'App is running'
-    response.sendFile(__dirname+'/page.html');
+    response.sendFile(__dirname+'/public/page.html');
      
 	
 	
