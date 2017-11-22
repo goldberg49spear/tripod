@@ -17,41 +17,38 @@
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript">
     
-    var DemoApp = angular.module('DemoApp', ['dx']);
+   var DemoApp = angular.module('DemoApp', ['dx']);
+
 DemoApp.controller('DemoController', function DemoController($scope) {
-    
-    $scope.searchValue = "";
-    $scope.productName = "",
-    $scope.productPrice = "",
-    $scope.productImage = "";
+    $scope.searchMode = "contains";
     
     $scope.treeViewOptions = {
+        bindingOptions: {
+            searchMode: "searchMode",
+        },
         items: products,
-        width: 300,
-        onItemClick: function(e) {
-            var item = e.itemData;
-            $scope.productName = item.text;
-            $scope.productImage = item.image;
-            $scope.productPrice = item.price ? "$" + item.price : "";
-        }
+        width: 500,
+        searchEnabled: true
+    };
+
+    $scope.searchModeOptions = {
+        bindingOptions: {
+            value: "searchMode"
+        },
+    	dataSource: ["contains", "startsWith"]
     };
 });
-    
     
     </script>
 </head>
 <body class="dx-viewport">
-    
-    
     <div class="demo-container" ng-app="DemoApp" ng-controller="DemoController">
-        <p >Hi checking</p>
-        <div class="form">
-            <p>check2</p>
-            <div id="simple-treeview" dx-tree-view="treeViewOptions"></div>
-            <div id="product-details" ng-if="productPrice">
-                <img ng-src="{{productImage}}" />
-                <div class="name">{{productName}}</div>
-                <div class="price">{{productPrice}}</div>
+        <div id="treeview" dx-tree-view="treeViewOptions"></div>
+        <div class="options">
+            <div class="caption">Options</div>
+            <div class="option">
+                <span>Search mode</span>
+                <div dx-select-box="searchModeOptions"></div>
             </div>
         </div>
     </div>
