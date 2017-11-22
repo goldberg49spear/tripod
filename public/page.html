@@ -24,10 +24,10 @@ DemoApp.controller('DemoController', function DemoController($scope) {
     
     $scope.getRecords=function(){
         $http({method:'GET',url:'/db/getRecords'}).then(function success(response){
-        
+             $scope.dataset = response.data; 
         
         },function fail(response){
-        
+             $scope.dataset = response.data||'Request failed'; 
         });
     };
     
@@ -61,5 +61,31 @@ DemoApp.controller('DemoController', function DemoController($scope) {
             </div>
         </div>
     </div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Account Name</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    
+                </tr>   
+            <thead>
+                
+             <tbody>
+                 <tr ng-repeat="item in dataset">
+                     <td>{{item.accountName}}</td>
+                     <td>{{item.firstname}}</td>
+                     <td>{{item.lastname}}</td>
+                     <td>{{item.phone}}</td>
+                     <td>{{item.email}}</td>
+                 </tr>   
+            </tbody>
+        
+        </table>
+    </div>
+    
 </body>
 </html>
