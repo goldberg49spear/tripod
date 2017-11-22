@@ -44,7 +44,7 @@ app.get('/db/getRecords', function(req,res){
         var client = new pg.Client(conString);
         
         client.connect();
-	var string="select a.Name as accountname,c.Id,firstName,LastName,phone,email from salesforce14.contact c INNER JOIN salesforce14.account a ON a.sfid=c.accountId";
+	var string="select a.Name as accountname,c.Id,firstName,LastName,phone,email from salesforce.contact c INNER JOIN salesforce.account a ON a.sfid=c.accountId";
 
         var query = client.query(string);
 
