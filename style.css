@@ -1,3 +1,8 @@
+#p{
+    color:blue;
+}
+
+
 #simple-treeview, #product-details {
     display: inline-block;
 }
