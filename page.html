@@ -14,7 +14,31 @@
     <script src="https://cdn3.devexpress.com/jslib/17.2.3/js/dx.all.js"></script>
     <script src="data.js"></script>
     <link rel="stylesheet" type ="text/css" href ="styles.css" />
-    <script src="index.js"></script>
+    <script type="text/javascript">
+    
+    
+    var DemoApp = angular.module('DemoApp', ['dx']);
+
+DemoApp.controller('DemoController', function DemoController($scope) {
+    $scope.searchValue = "";
+    $scope.productName = "",
+    $scope.productPrice = "",
+    $scope.productImage = "";
+    
+    $scope.treeViewOptions = {
+        items: products,
+        width: 300,
+        onItemClick: function(e) {
+            var item = e.itemData;
+            $scope.productName = item.text;
+            $scope.productImage = item.image;
+            $scope.productPrice = item.price ? "$" + item.price : "";
+        }
+    };
+});
+    
+    
+    </script>
 </head>
 <body class="dx-viewport">
     <div class="demo-container" ng-app="DemoApp" ng-controller="DemoController">
