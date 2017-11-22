@@ -14,62 +14,8 @@
     <script src="https://cdn3.devexpress.com/jslib/17.2.3/js/dx.all.js"></script>
    
     <link rel="stylesheet" type ="text/css" href ="style.css" />
+    <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript">
-    var products = [{
-        id: "1",
-    text: "Stores",
-    expanded: true,
-    items: [{
-        id: "1_1",
-        text: "Super Mart of the West",
-        expanded: true,
-        items: [{
-            id: "1_1_1",
-            text: "Video Players",
-            items: [{
-                id: "1_1_1_1",
-                text: "HD Video Player",
-                price: 220,
-                image: "images/products/1.png"
-            }, {
-                id: "1_1_1_2",
-                text: "SuperHD Video Player",
-                image: "images/products/2.png",
-                price: 270
-            }]
-        }, {
-            id: "1_1_2",
-            text: "Televisions",
-            expanded: true,
-            items: [{
-                id: "1_1_2_1",
-                text: "SuperLCD 42",
-                image: "images/products/7.png",
-                price: 1200
-            }, {
-                id: "1_1_2_2",
-                text: "SuperLED 42",
-                image: "images/products/5.png",
-                price: 1450
-            }, {
-                id: "1_1_2_3",
-                text: "SuperLED 50",
-                image: "images/products/4.png",
-                price: 1600
-            }, {
-                id: "1_1_2_4",
-                text: "SuperLCD 55",
-                image: "images/products/6.png",
-                price: 1350
-            }, {
-                id: "1_1_2_5",
-                text: "SuperLCD 70",
-                image: "images/products/9.png",
-                price: 4000
-            }]
-        }]
-        }]
-    }];
     
     var DemoApp = angular.module('DemoApp', ['dx']);
 DemoApp.controller('DemoController', function DemoController($scope) {
